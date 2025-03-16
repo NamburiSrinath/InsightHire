@@ -1,6 +1,7 @@
 from github_agent import run_github_agent
 from scholar_agent import run_scholar_agent
 from jd_agent import run_jd_requirements
+from resume_agent import run_resume_agent
 from aggregator_agent import run_aggregator_agent
 
 def main():
@@ -19,11 +20,13 @@ def main():
     print(scholar_data)
     print("="*50)
 
-    # resume_data = run_resume_agent(requirements=jd_requirements)
-    # print("Resume evaluation")
-    # print(resume_data)
-    # print("="*50)
+    resume_data = run_resume_agent()
+    print("Resume evaluation")
+    print(resume_data)
+    print("="*50)
 
-    run_aggregator_agent(github_data, scholar_data, resume_data, jd_requirements)
+    final_evaluation = run_aggregator_agent(github_data, scholar_data, resume_data, jd_requirements)
+    print("============ Candidates final evaluation ============")
+    print(final_evaluation)
 if __name__ == "__main__":
     main()

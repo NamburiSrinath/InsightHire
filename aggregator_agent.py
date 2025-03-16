@@ -104,11 +104,5 @@ def run_aggregator_agent(github_data=None, scholar_data=None, resume_data=None, 
     evaluation = get_chatgpt_evaluation(prompt)
     return evaluation
 
-# Main function
-def main():
-    evaluation = run_aggregator_agent(github_data, scholar_data, resume_data, requirements)
-    print("\n===== Candidate Evaluation =====\n")
-    print(evaluation)
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     run_aggregator_agent(github_data, scholar_data, resume_data, requirements)

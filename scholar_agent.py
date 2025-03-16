@@ -24,7 +24,7 @@ load_dotenv()
 OPENAI_API_KEY = environ["OPENAI_API_KEY"]
 
 class ScholarAgent:
-    def __init__(self, requirements, papers_dir: str, persist_dir: str = "./storage/scholar_index"):
+    def __init__(self, requirements_str, papers_dir: str = "/hdd4/srinath2/InsightHire/scholar_docs/", persist_dir: str = "./storage/scholar_index"):
         self.papers_dir = papers_dir
         self.persist_dir = persist_dir
         self.documents = None
@@ -32,36 +32,27 @@ class ScholarAgent:
         self.query_engine = None
         self.agent = None
         self.document_metadata_cache = {}  # Cache for document metadata
-        # Parse requirements once during initialization
-        # self.requirements = """Requirements:
-        #                 Languages: Python, C++
-        #                 Frameworks: PyTorch
-        #                 Fields of Expertise: GenAI, LLMs, Computer Vision, Multi-GPU Training
-        #                 Culture: Strong individual contributor, works well in cross-collaboration."""
-        self.requirements = requirements
-        self.parsed_requirements = self._parse_requirements(self.requirements)
-        self.all_skills = self._extract_all_skills(self.parsed_requirements)
         
-    def _parse_requirements(self, requirements_text):
-        """Parse the requirements text into a structured format."""
+        # Define requirements as a string
+        self.requirements_str = requirements_str
+                        
+        # Parse requirements from updated JSON format
+        self.all_skills = self.parse_requirements_json(requirements_str)
+        
+    def parse_requirements_json(self, response):
+        """Parse requirements from a JSON structure."""
+        requirements_text = str(response)
         lines = [line.strip() for line in requirements_text.split('\n') if line.strip()]
         parsed_req = {}
-        
+
         for line in lines:
             if ":" in line:
                 category, skills = line.split(":", 1)
                 category = category.strip()
                 skills_list = [skill.strip() for skill in skills.split(',')]
                 parsed_req[category] = skills_list
-        
+        # print(parsed_req)
         return parsed_req
-    
-    def _extract_all_skills(self, parsed_requirements):
-        """Extract all individual skills as a flat list."""
-        all_skills = []
-        for category, skills in parsed_requirements.items():
-            all_skills.extend(skills)
-        return all_skills
         
     def load_documents(self):
         """Load all documents from the papers directory."""
@@ -101,7 +92,7 @@ class ScholarAgent:
             self.load_documents()
             
         # Create an LLM for metadata extraction
-        llm = OpenAI(model="gpt-3.5-turbo", temperature=0.4)
+        llm = OpenAI(model="gpt-3.5-turbo", temperature=0.01)
         
         all_papers_metadata = []
 
@@ -193,7 +184,7 @@ class ScholarAgent:
     
     def format_response_as_json(self, analysis_text: str) -> str:
         """Format the agent's analysis response as a structured JSON with the exact required skill keys."""
-        llm = OpenAI(model="gpt-3.5-turbo", temperature=0.4)
+        llm = OpenAI(model="gpt-3.5-turbo-16k", temperature=0.01)
         
         skills_list = ", ".join([f'"{skill}"' for skill in self.all_skills])
         
@@ -218,9 +209,13 @@ class ScholarAgent:
         """
         
         result = llm.complete(format_prompt)
+        
+        # Get the text content from the result
+        result_text = result.text if hasattr(result, 'text') else str(result)
+        
         # Validate JSON and fix if needed
         try:
-            json_obj = json.loads(result.text)
+            json_obj = json.loads(result_text)
             # Ensure all required skills are present
             for skill in self.all_skills:
                 if skill not in json_obj:
@@ -230,7 +225,7 @@ class ScholarAgent:
             # If not valid JSON, try to extract just the JSON part
             try:
                 # Look for text between curly braces
-                json_match = re.search(r'\{.*\}', result.text, re.DOTALL)
+                json_match = re.search(r'\{.*\}', result_text, re.DOTALL)
                 if json_match:
                     json_str = json_match.group(0)
                     json_obj = json.loads(json_str)
@@ -293,7 +288,7 @@ class ScholarAgent:
         )
         
         # Create ReActAgent
-        llm = OpenAI(model="gpt-3.5-turbo", temperature=0.4)
+        llm = OpenAI(model="gpt-3.5-turbo", temperature=0.01)
 
         self.agent = ReActAgent.from_tools(
             [query_tool, author_papers_tool, format_json_tool],
@@ -305,7 +300,7 @@ class ScholarAgent:
             Evaluate the following profile based on the skill requirements.
 
             **Requirements:**
-            {self.requirements}
+            {self.requirements_str}
             
             For each specific skill mentioned in the requirements, evaluate the candidate and assign a score from 0-10,
             where 0 means no evidence of skill and 10 means exceptional proficiency.
@@ -334,9 +329,12 @@ class ScholarAgent:
             
         response = self.agent.query(question)
         
+        # Convert response to string safely
+        response_str = str(response)
+        
         # Check if response is already JSON
         try:
-            json_obj = json.loads(str(response))
+            json_obj = json.loads(response_str)
             # Ensure all required skills are present in the JSON
             for skill in self.all_skills:
                 if skill not in json_obj:
@@ -344,22 +342,22 @@ class ScholarAgent:
             return json.dumps(json_obj, indent=2)  # Return formatted JSON
         except json.JSONDecodeError:
             # If not JSON, try to format it using our formatter
-            return self.format_response_as_json(str(response))
+            return self.format_response_as_json(response_str)
 
 def run_scholar_agent(requirements):
-    scholar_agent = ScholarAgent(requirements, "/hdd4/srinath2/seattle_hackathon/scholar_docs")
+    scholar_agent = ScholarAgent(requirements, "/hdd4/srinath2/InsightHire/scholar_docs/")
     # Example query about a specific author's papers
     question = "Analyze the papers authored by the candidate?"
     # print(f"\nQuestion: {question}")
     scholar_answer = scholar_agent.query(question)
     return scholar_answer
 
-def main():
-    scholar_answer = run_scholar_agent(requirements=requirements)
-    # print("\n===== Candidate Evaluation based on Scholar Agent =====\n")
-    # print(f"Answer: {scholar_answer}")
-    return scholar_answer
+# def main():
+#     scholar_answer = run_scholar_agent(requirements=requirements)
+#     # print("\n===== Candidate Evaluation based on Scholar Agent =====\n")
+#     # print(f"Answer: {scholar_answer}")
+#     return scholar_answer
 
-# Example usage
-if __name__ == "__main__":
-    main()
+# # Example usage
+# if __name__ == "__main__":
+#     main()

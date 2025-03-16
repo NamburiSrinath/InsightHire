@@ -1,0 +1,166 @@
+JD Requirements
+{
+    "Programming languages": ["Python", "Java", "C++"],
+    "Frameworks": ["PyTorch", "TensorFlow"],
+    "Field of expertise": ["NLP", "Computer vision", "Entity resolution", "Knowledge graphs"],
+    "Personal skills": ["PhD or Master's degree in Computer Science or related field", "Strong understanding of data structures and algorithms", "Experience in parallel and distributed computing", "Ability to work with large-scale AI models in production", "Background in LLMs and multimodal AI", "Proficiency in AWS services for AI/ML", "Capability to lead research initiatives and contribute to cutting-edge AI advancements"]
+}
+==================================================
+Github evaluation
+
+    **GitHub Profile:**
+    - Username: udaygirish
+    - Name: Uday Girish Maradana
+    - Followers: 19
+    - Following: 31
+    - Public Repositories: 74
+    - Total Commits: 269
+    ```json
+{
+    "Python": {
+        "score": 8,
+        "insight": "The user has a strong presence in Python-related repositories with a total of 23 repositories using Python. Notable contributions include 'Embodied_Agent_Planning' with 3 commits, 'fallabella_ds_interview_task' with 12 commits, and 'cdiscount_challenge_code' with 13 commits."
+    },
+    "Java": {
+        "score": 1,
+        "insight": "The user has minimal to no contributions in Java-related repositories. The repository 'booknotes' is the only repository using Java, but there are no commits in it."
+    },
+    "C++": {
+        "score": 3,
+        "insight": "The user has some involvement in C++ repositories, with 'SfM_CPlus' having 9 commits and 'motion_planning_rbe' with 4 commits. However, the user's contributions in C++ are not as extensive as in Python."
+    },
+    "PyTorch": {
+        "score": 0,
+        "insight": "There are no repositories related to PyTorch in the user's profile, indicating a lack of direct experience or contributions in this framework."
+    },
+    "TensorFlow": {
+        "score": 0,
+        "insight": "Similar to PyTorch, there are no repositories directly related to TensorFlow in the user's profile, suggesting a lack of specific contributions in this framework."
+    },
+    "NLP": {
+        "score": 2,
+        "insight": "The user has limited visible contributions in NLP-related projects. The repository 'Einstein-Vision' may involve NLP to some extent, but the user's direct contributions to NLP-focused projects are not prominent."
+    },
+    "Computer vision": {
+        "score": 4,
+        "insight": "The user has some involvement in Computer Vision projects, as seen in repositories like 'Embodied_Agent_Planning' and 'SfM_CPlus'. However, there is room for more substantial contributions in this field."
+    },
+    "Entity resolution": {
+        "score": 0,
+        "insight": "There are no repositories specifically related to Entity Resolution in the user's profile, indicating a lack of direct experience or contributions in this area."
+    },
+    "Knowledge graphs": {
+        "score": 0,
+        "insight": "There are no repositories directly related to Knowledge Graphs in the user's profile, suggesting a lack of specific contributions in this domain."
+    },
+    "PhD or Master's degree in Computer Science or related field": {
+        "score": 6,
+        "insight": "While the user's GitHub profile does not explicitly mention academic degrees, the user has a diverse range of repositories showcasing technical skills and knowledge. The repository 'academic_cv' demonstrates a structured approach to academic and professional information."
+    },
+    "Strong understanding of data structures and algorithms": {
+        "score": 7,
+        "insight": "The user's involvement in various projects, such as 'RL_Final_Project' and 'time_series_experiments', indicates a solid understanding of data structures and algorithms through practical implementations."
+    },
+    "Experience in parallel and distributed computing": {
+        "score": 3,
+        "insight": "The user has some exposure to parallel and distributed computing, as evidenced by contributions to projects like 'RL_Final_Project' and 'SfM_CPlus'. However, there is potential for further deepening this expertise."
+    },
+    "Ability to work with large-scale AI models in production": {
+        "score": 2,
+        "insight": "There is limited visibility of the user's experience in deploying large-scale AI models in production environments based on the GitHub profile. Further contributions or projects in this area would enhance this skill."
+    },
+    "Background in LLMs and multimodal AI": {
+        "score": 0,
+        "insight": "There are no specific repositories related to Large Language Models (LLMs) or multimodal AI in the user's profile, indicating a lack of direct experience or contributions in this specialized area."
+    },
+    "Proficiency in AWS services for AI/ML": {
+        "score": 1,
+        "insight": "There is minimal evidence of the user's proficiency in AWS services for AI/ML based on the GitHub profile. Further projects or contributions involving AWS services would help showcase this skill."
+    },
+    "Capability to lead research initiatives and contribute to cutting-edge AI advancements": {
+        "score": 4,
+        "insight": "While the user has a diverse range of projects, there is limited visibility of leading research initiatives or contributing to cutting-edge AI advancements. Engaging in more research-oriented projects could further develop this capability."
+    }
+}
+```
+==================================================
+Google Scholar evaluation
+{
+  "Programming languages": {
+    "score": 0,
+    "insight": ""
+  },
+  "Frameworks": {
+    "score": 0,
+    "insight": ""
+  },
+  "Field of expertise": {
+    "score": 0,
+    "insight": ""
+  },
+  "Personal skills": {
+    "score": 0,
+    "insight": ""
+  },
+  "\"Programming languages\"": {
+    "score": 0,
+    "insight": "No evidence found in the publications."
+  },
+  "\"Frameworks\"": {
+    "score": 0,
+    "insight": "No evidence found in the publications."
+  },
+  "\"Field of expertise\"": {
+    "score": 0,
+    "insight": "No evidence found in the publications."
+  },
+  "\"Personal skills\"": {
+    "score": 0,
+    "insight": "No evidence found in the publications."
+  }
+}
+==================================================
+Resume evaluation
+Based on the evaluation, the candidate has a strong background in Python and Pytorch, which align well with the job description requirements. However, there is no explicit mention of experience in GenAI.
+==================================================
+============ Candidates final evaluation ============
+```json
+{
+    "Python": {"score": 8, "insight": "The user has a strong presence in Python-related repositories with a total of 23 repositories using Python. Notable contributions include 'Embodied_Agent_Planning' with 3 commits, 'fallabella_ds_interview_task' with 12 commits, and 'cdiscount_challenge_code' with 13 commits."},
+    "Java": {"score": 1, "insight": "The user has minimal to no contributions in Java-related repositories. The repository 'booknotes' is the only repository using Java, but there are no commits in it."},
+    "C++": {"score": 3, "insight": "The user has some involvement in C++ repositories, with 'SfM_CPlus' having 9 commits and 'motion_planning_rbe' with 4 commits. However, the user's contributions in C++ are not as extensive as in Python."},
+    "PyTorch": {"score": 0, "insight": "There are no repositories related to PyTorch in the user's profile, indicating a lack of direct experience or contributions in this framework."},
+    "TensorFlow": {"score": 0, "insight": "Similar to PyTorch, there are no repositories directly related to TensorFlow in the user's profile, suggesting a lack of specific contributions in this framework."},
+    "NLP": {"score": 2, "insight": "The user has limited visible contributions in NLP-related projects. The repository 'Einstein-Vision' may involve NLP to some extent, but the user's direct contributions to NLP-focused projects are not prominent."},
+    "Computer vision": {"score": 4, "insight": "The user has some involvement in Computer Vision projects, as seen in repositories like 'Embodied_Agent_Planning' and 'SfM_CPlus'. However, there is room for more substantial contributions in this field."},
+    "Entity resolution": {"score": 0, "insight": "There are no repositories specifically related to Entity Resolution in the user's profile, indicating a lack of direct experience or contributions in this area."},
+    "Knowledge graphs": {"score": 0, "insight": "There are no repositories directly related to Knowledge Graphs in the user's profile, suggesting a lack of specific contributions in this domain."},
+    "PhD or Master's degree in Computer Science or related field": {"score": 6, "insight": "While the user's GitHub profile does not explicitly mention academic degrees, the user has a diverse range of repositories showcasing technical skills and knowledge. The repository 'academic_cv' demonstrates a structured approach to academic and professional information."},
+    "Strong understanding of data structures and algorithms": {"score": 7, "insight": "The user's involvement in various projects, such as 'RL_Final_Project' and 'time_series_experiments', indicates a solid understanding of data structures and algorithms through practical implementations."},
+    "Experience in parallel and distributed computing": {"score": 3, "insight": "The user has some exposure to parallel and distributed computing, as evidenced by contributions to projects like 'RL_Final_Project' and 'SfM_CPlus'. However, there is potential for further deepening this expertise."},
+    "Ability to work with large-scale AI models in production": {"score": 2, "insight": "There is limited visibility of the user's experience in deploying large-scale AI models in production environments based on the GitHub profile. Further contributions or projects in this area would enhance this skill."},
+    "Background in LLMs and multimodal AI": {"score": 0, "insight": "There are no specific repositories related to Large Language Models (LLMs) or multimodal AI in the user's profile, indicating a lack of direct experience or contributions in this specialized area."},
+    "Proficiency in AWS services for AI/ML": {"score": 1, "insight": "There is minimal evidence of the user's proficiency in AWS services for AI/ML based on the GitHub profile. Further projects or contributions involving AWS services would help showcase this skill."},
+    "Capability to lead research initiatives and contribute to cutting-edge AI advancements": {"score": 4, "insight": "While the user has a diverse range of projects, there is limited visibility of leading research initiatives or contributing to cutting-edge AI advancements. Engaging in more research-oriented projects could further develop this capability."},
+    "weakness_evaluation": {
+        "PyTorch": ["What experience do you have with PyTorch and why is it not reflected in your GitHub profile?"],
+        "TensorFlow": ["Can you provide examples of projects where you have worked with TensorFlow?"],
+        "Entity resolution": ["How do you plan to gain experience in Entity Resolution to enhance your profile?"],
+        "Knowledge graphs": ["What steps are you taking to improve your contributions in the area of Knowledge Graphs?"],
+        "Background in LLMs and multimodal AI": ["What interests you about LLMs and multimodal AI, and how do you plan to incorporate them into your profile?"],
+        "Proficiency in AWS services for AI/ML": ["What motivated you to improve your proficiency in AWS services, and how do you plan to showcase this in your projects?"],
+        "Capability to lead research initiatives and contribute to cutting-edge AI advancements": ["What strategies do you have in place to lead research initiatives and contribute to cutting-edge AI advancements in the future?"]
+    },
+    "strength_evaluation": {
+        "Python": ["Can you elaborate on your experience with Python and how it has contributed to your GitHub profile?"],
+        "Java": ["What motivated you to contribute more to Java-related repositories?"],
+        "C++": ["How do you plan to increase your contributions in C++ repositories to align with your Python contributions?"],
+        "NLP": ["What excites you about NLP projects, and how do you plan to enhance your contributions in this area?"],
+        "Computer vision": ["In what ways do you see yourself making more substantial contributions to Computer Vision projects?"],
+        "PhD or Master's degree in Computer Science or related field": ["How has your academic background influenced your GitHub projects and technical skills?"],
+        "Strong understanding of data structures and algorithms": ["Can you provide examples of how your understanding of data structures and algorithms has been applied in your projects?"],
+        "Experience in parallel and distributed computing": ["What inspired you to explore parallel and distributed computing, and how do you plan to deepen your expertise in this area?"],
+        "Ability to work with large-scale AI models in production": ["What challenges have you faced in deploying large-scale AI models, and how do you plan to overcome them in future projects?"]
+    }
+}
+```

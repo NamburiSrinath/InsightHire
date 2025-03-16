@@ -33,11 +33,10 @@ try:
 except:
     index_loaded = False
     
-if not index_loaded:
-    # load data
-    jd_docs = SimpleDirectoryReader(
-        input_files=["JD_Docs/InternalAppliedScientistJD.docx", "JD_Docs/ExternalAppliedScientistJD.docx"]
-    ).load_data()
+# load data
+jd_docs = SimpleDirectoryReader(
+    input_files=["JD_Docs/InternalAppliedScientistJD.docx", "JD_Docs/ExternalAppliedScientistJD.docx"]
+).load_data()
 
 #build index
 jd_index = VectorStoreIndex.from_documents(jd_docs, show_progress=True)
